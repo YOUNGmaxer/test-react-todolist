@@ -15,7 +15,34 @@ class TodoList extends Component {
     this.handleItemDelete = this.handleItemDelete.bind(this);
   }
 
+  // 在组件即将被挂载到页面的时刻自动执行
+  componentWillMount() {
+    console.log('componentWillMount');
+  }
+
+  // 在被挂载之后执行
+  componentDidMount() {
+    console.log('componentDidMount');
+  }
+
+  // 组件被更新之前执行
+  shouldComponentUpdate() {
+    console.log('shouldComponentUpdate');
+    return true;
+  }
+
+  // 组件更新之前，shouldComponentUpdate之后执行
+  componentWillUpdate() {
+    console.log('componentWillUpdate');
+  }
+
+  // 组件更新之后被执行
+  componentDidUpdate() {
+    console.log('componentDidUpdate');
+  }
+
   render() {
+    console.log('parent render');
     return (
       <Fragment>
         {/* 输入框 */}
