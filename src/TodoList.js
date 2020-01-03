@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import TodoItem from './TodoItem';
+import axios from 'axios';
 import './style.css';
 
 class TodoList extends Component {
@@ -21,8 +22,12 @@ class TodoList extends Component {
   }
 
   // 在被挂载之后执行
+  // 适合用来发 ajax 请求
   componentDidMount() {
-    console.log('componentDidMount');
+    console.log('componentDidMount & ajax');
+    axios.get('/api/todolist')
+      .then(() => alert('success'))
+      .catch(err => console.error(err));
   }
 
   // 组件被更新之前执行
