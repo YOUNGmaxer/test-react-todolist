@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Input, Button, List } from 'antd';
 import 'antd/dist/antd.css';
 import store from './store';
+import { CHANG_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_ITEM } from './store/actionType';
 
 class AntdTodoList extends Component {
 
@@ -41,7 +42,7 @@ class AntdTodoList extends Component {
 
   handleInputChange(e) {
     const action = {
-      type: 'change_input_value',
+      type: CHANG_INPUT_VALUE,
       value: e.target.value
     }
     store.dispatch(action);
@@ -53,14 +54,14 @@ class AntdTodoList extends Component {
 
   handleBtnClick() {
     const action = {
-      type: 'add_todo_item'
+      type: ADD_TODO_ITEM
     };
     store.dispatch(action);
   }
 
   handleItemDelete(index) {
     const action = {
-      type: 'delete_todo_item',
+      type: DELETE_TODO_ITEM,
       index
     };
     store.dispatch(action);
