@@ -5,7 +5,7 @@ import {
   getInputChangeAction,
   getAddItemAction,
   getDeleteItemAction,
-  getTodoList
+  getInitList
 } from './store/actionCreator';
 import TodoListUI from './TodoListUI';
 
@@ -34,7 +34,7 @@ class AntdTodoList extends Component {
   }
 
   componentDidMount() {
-    const action = getTodoList();
+    const action = getInitList();
     store.dispatch(action);
   }
 
